@@ -1,0 +1,40 @@
+{% extends "app_student/components/base.html" %}
+{% load static %}
+
+{% block head %} {% endblock head %}
+
+{% block navbar %}
+    {% include 'app_student/components/navbar.html' %}
+{% endblock navbar %}
+
+
+{% block main %}
+<div class="container">
+  <a class="m-3 text-decoration-none text-white btn btn-primary" href="">добавить задачу</a>
+    <ol class="list-group list-group-numbered">
+        {% for i in list %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{i.title}}</div>
+           {{i.description}}
+          </div>
+          <span class="badge bg-primary rounded-pill">выполнено</span>    
+
+          <div class="d-block p-2" >            
+            <a class="text-decoration-none text-white btn btn-primary" href="">подробнее</a>
+          </div>   
+        </li> 
+        <br>           
+        {% endfor %}   
+    </ol>
+</div>
+
+{% endblock main %}
+
+
+
+{% block footer %}
+    {% include 'app_student/components/footer.html' %}
+{% endblock footer %}
+
+
